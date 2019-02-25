@@ -85,6 +85,19 @@ class MovieListTableViewController: UITableViewController {
 
         return cell
      }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "DetailMovieSegue", sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let index = self.tableView.indexPathForSelectedRow?.row,
+            let movie = self.movies?[index]{
+            if let destination = segue.destination as? MovieDetailViewController {
+                destination.setMovie(movie: movie)
+            }
+        }
+    }
 }
 
 //MARK: - API

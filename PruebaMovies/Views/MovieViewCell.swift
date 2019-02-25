@@ -31,12 +31,11 @@ class MovieViewCell: UITableViewCell {
         voteAverage.text = "Nota promedio: \(movie.vote_average.description)"
 
         posterImageView.image = nil
+
         if let imageURL = MovieDB.posterUrl(movie: movie) {
             posterImageView.load(url: imageURL)
+
         }
-        
-//        posterImageView.kf.setImage(with: movie.thumbnail.url,
-//                             options: [.transition(.fade(0.3))])
     }
 
 }
