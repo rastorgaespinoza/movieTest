@@ -26,7 +26,6 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
-
     }
 
     func updateView(){
@@ -39,8 +38,7 @@ class MovieDetailViewController: UIViewController {
         posterImageView.image = nil
         
         if let imageURL = MovieDB.posterUrl(movie: movie) {
-            posterImageView.load(url: imageURL)
-            
+            posterImageView.load(url: imageURL) 
         }
     }
 }
